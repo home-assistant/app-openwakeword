@@ -1,4 +1,4 @@
-ARG BUILD_FROM
+ARG BUILD_FROM=ghcr.io/home-assistant/base-debian:trixie
 FROM ${BUILD_FROM}
 
 # Set shell
@@ -6,7 +6,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Install openWakeWord
 WORKDIR /usr/src
-ARG WYOMING_OPENWAKEWORD_VERSION
+ARG WYOMING_OPENWAKEWORD_VERSION=2.1.0
 
 RUN \
     apt-get update \
@@ -36,3 +36,9 @@ HEALTHCHECK --start-period=10m \
         | nc -w 1 localhost 10400 \
         | grep -iq "openWakeWord" \
         || exit 1
+
+LABEL \
+    org.opencontainers.image.title="Home Assistant App: openWakeWord" \
+    org.opencontainers.image.description="openWakeWord using the Wyoming protocol" \
+    org.opencontainers.image.source="https://github.com/home-assistant/app-openwakeword" \
+    org.opencontainers.image.licenses="Apache License 2.0"

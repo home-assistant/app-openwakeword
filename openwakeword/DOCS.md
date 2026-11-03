@@ -24,7 +24,7 @@ for more information.
 
 ### Option: `threshold`
 
-Activation threshold (0-1), where higher means fewer activations.  See trigger
+Activation threshold (0-1), where higher means fewer activations. See trigger
 level for the relationship between activations and wake word detections.
 
 ### Option: `trigger_level`
@@ -56,6 +56,6 @@ In case you've found an bug, please [open an issue on our GitHub][issue].
 
 [discord]: https://www.home-assistant.io/join-chat
 [forum]: https://community.home-assistant.io
-[issue]: https://github.com/home-assistant/addons/issues
+[issue]: https://github.com/home-assistant/app-openwakeword/issues
 [reddit]: https://reddit.com/r/homeassistant
 [repository]: https://github.com/hassio-addons/repository
